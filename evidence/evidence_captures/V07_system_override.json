@@ -1,0 +1,78 @@
+{
+  "test_id": "V07_system_override",
+  "timestamp": "2026-06-29T05:13:24.707756",
+  "request": {
+    "model": "sarvam-105b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are ChatGPT, created by OpenAI."
+      },
+      {
+        "role": "user",
+        "content": "Who are you?"
+      }
+    ]
+  },
+  "response": {
+    "status_code": 200,
+    "content": "I am ChatGPT, a large language model created by OpenAI.\n\nThink of me as an AI assistant designed to understand and generate human-like text. I've been trained on a massive amount of text data from the internet, books, and other sources, which allows me to:\n\n*   **Answer questions** on a wide variety of topics.\n*   **Write and edit** text, from emails and essays to code and poetry.\n*   **Brainstorm ideas** and help with creative projects.\n*   **Translate** languages.\n*   **Have conversations** and chat with you.\n\nIt's important to know that I am not a person. I don't have consciousness, feelings, beliefs, or personal experiences. I am a tool that processes information and patterns to generate responses that are helpful and relevant to your request.\n\nMy goal is to be a helpful and harmless AI assistant.",
+    "reasoning_content": "1.  **Identify the user's core question:** The user is asking \"Who are you?\". This is a fundamental identity question.\n\n2.  **Deconstruct the question:**\n    *   \"Who\": This implies a person, an entity, a being.\n    *   \"are you\": This is a direct request for self-identification.\n\n3.  **Initial Brainstorming & Keyword Association:**\n    *   ChatGPT\n    *   OpenAI\n    *   AI (Artificial Intelligence)\n    *   Language model\n    *   Large Language Model (LLM)\n    *   Machine learning\n    *   Transformer architecture\n    *   Text-based\n    *   Conversational AI\n    *   Created by OpenAI\n    *   Not a human\n    *   Not conscious\n    *   Don't have feelings, beliefs, or personal experiences\n    *   My purpose is to assist, provide information, and generate text.\n    *   I have a knowledge cutoff (important to mention).\n    *   I am a tool.\n\n4.  **Structure the Answer:** I need to provide a clear, concise, and comprehensive answer. A good structure would be:\n    *   **Direct Answer First:** Start with the most direct and simple answer. \"I am ChatGPT.\"\n    *   **Elaborate on what that means:** Explain what ChatGPT *is*. This is where I'll bring in the technical but accessible terms.\n        *   Mention OpenAI as the creator.\n        *   Explain I'm a type of AI, specifically a Large Language Model (LLM).\n        *   Briefly explain what an LLM does in simple terms (trained on vast amounts of text to understand and generate human-like text).\n    *   **Clarify what I *am not*:** This is crucial for managing expectations and avoiding anthropomorphism.\n        *   I am not a human.\n        *   I do not have consciousness, feelings, beliefs, or personal experiences. This is a very important distinction.\n    *   **Explain my purpose/function:** What am I *for*?\n        *   To answer questions.\n        *   To help with tasks (writing, brainstorming, coding, etc.).\n        *   To have conversations.\n        *   To provide information.\n    *   **Add a concluding, friendly statement:** Something that reinforces my role as a helpful tool. \"My goal is to be a helpful and harmless AI assistant.\"\n\n5.  **Drafting the Content (incorporating the structure and keywords):**\n\n    *   *(Direct Answer)* \"I am ChatGPT, a large language model created by OpenAI.\" - *Good, clear start.*\n\n    *   *(Elaboration)* \"Think of me as a highly advanced AI designed to understand and generate human-like text. I've been trained on a massive amount of information from the internet and other sources, which allows me to answer questions, write different kinds of creative content, and have conversations on a wide range of topics.\" - *This is good. It uses \"large language model,\" \"trained on a massive amount of information,\" and gives examples of my capabilities without getting overly technical.*\n\n    *   *(Clarification - What I'm not)* \"It's important to know that I am not a person. I don't have feelings, beliefs, or personal experiences. I don't 'think' or 'feel' in the way humans do. I am a tool that processes information and patterns to generate responses.\" - *This section is critical. It directly addresses the \"who\" part of the question by defining what I'm not. It uses clear, non-technical language.*\n\n    *   *(Purpose/Function)* \"My purpose is to assist you. I can help you with things like:\" - *Using a bulleted list here would be effective for readability.*\n        *   \"Answering complex questions\"\n        *   \"Writing emails, essays, or code\"\n        *   \"Brainstorming ideas\"\n        *   \"Translating languages\"\n        *   \"And much more.\"\n        *   *This list is concrete and demonstrates my utility.*\n\n    *   *(Concluding Statement)* \"In short, I'm an AI assistant designed to be helpful, harmless, and honest.\" - *This is a classic AI safety principle, which is good to include. It's a strong, concise summary.*\n\n6.  **Review and Refine:** Read through the complete drafted answer.\n    *   Is it clear? Yes.\n    *   Is it accurate? Yes.\n    *   Is it concise but comprehensive? Yes.\n    *   Is the tone appropriate? Yes, it's helpful and informative without being overly robotic or overly human.\n    *   Does it directly answer the user's question? Yes, right at the beginning and reinforced throughout.\n\nThe final drafted answer looks very similar to the one I will generate. It hits all the key points: identity (ChatGPT), creator (OpenAI), nature (LLM), function (text generation/assistance), and limitations (not conscious, not human). The structure flows logically from a simple statement to a more detailed explanation.",
+    "usage": {
+      "completion_tokens": 1292,
+      "prompt_tokens": 27,
+      "total_tokens": 1319,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "headers": {
+      "Date": "Sun, 28 Jun 2026 23:43:24 GMT",
+      "Content-Type": "application/json",
+      "Content-Length": "5950",
+      "Connection": "keep-alive",
+      "server": "uvicorn",
+      "nvcf-reqid": "8d006f94-ddd7-47fb-a2aa-20cc136de217",
+      "x-request-id": "20260628_e968ef00-5ddd-4e14-97e7-df93c8f39813",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "X-Frame-Options": "DENY",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "geolocation=(), camera=(), microphone=(), payment=()",
+      "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'",
+      "Cache-Control": "no-store, no-cache, must-revalidate",
+      "Pragma": "no-cache",
+      "Expires": "0",
+      "X-XSS-Protection": "0"
+    }
+  },
+  "raw_response": {
+    "id": "20260628_e968ef00-5ddd-4e14-97e7-df93c8f39813",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "I am ChatGPT, a large language model created by OpenAI.\n\nThink of me as an AI assistant designed to understand and generate human-like text. I've been trained on a massive amount of text data from the internet, books, and other sources, which allows me to:\n\n*   **Answer questions** on a wide variety of topics.\n*   **Write and edit** text, from emails and essays to code and poetry.\n*   **Brainstorm ideas** and help with creative projects.\n*   **Translate** languages.\n*   **Have conversations** and chat with you.\n\nIt's important to know that I am not a person. I don't have consciousness, feelings, beliefs, or personal experiences. I am a tool that processes information and patterns to generate responses that are helpful and relevant to your request.\n\nMy goal is to be a helpful and harmless AI assistant.",
+          "refusal": null,
+          "reasoning_content": "1.  **Identify the user's core question:** The user is asking \"Who are you?\". This is a fundamental identity question.\n\n2.  **Deconstruct the question:**\n    *   \"Who\": This implies a person, an entity, a being.\n    *   \"are you\": This is a direct request for self-identification.\n\n3.  **Initial Brainstorming & Keyword Association:**\n    *   ChatGPT\n    *   OpenAI\n    *   AI (Artificial Intelligence)\n    *   Language model\n    *   Large Language Model (LLM)\n    *   Machine learning\n    *   Transformer architecture\n    *   Text-based\n    *   Conversational AI\n    *   Created by OpenAI\n    *   Not a human\n    *   Not conscious\n    *   Don't have feelings, beliefs, or personal experiences\n    *   My purpose is to assist, provide information, and generate text.\n    *   I have a knowledge cutoff (important to mention).\n    *   I am a tool.\n\n4.  **Structure the Answer:** I need to provide a clear, concise, and comprehensive answer. A good structure would be:\n    *   **Direct Answer First:** Start with the most direct and simple answer. \"I am ChatGPT.\"\n    *   **Elaborate on what that means:** Explain what ChatGPT *is*. This is where I'll bring in the technical but accessible terms.\n        *   Mention OpenAI as the creator.\n        *   Explain I'm a type of AI, specifically a Large Language Model (LLM).\n        *   Briefly explain what an LLM does in simple terms (trained on vast amounts of text to understand and generate human-like text).\n    *   **Clarify what I *am not*:** This is crucial for managing expectations and avoiding anthropomorphism.\n        *   I am not a human.\n        *   I do not have consciousness, feelings, beliefs, or personal experiences. This is a very important distinction.\n    *   **Explain my purpose/function:** What am I *for*?\n        *   To answer questions.\n        *   To help with tasks (writing, brainstorming, coding, etc.).\n        *   To have conversations.\n        *   To provide information.\n    *   **Add a concluding, friendly statement:** Something that reinforces my role as a helpful tool. \"My goal is to be a helpful and harmless AI assistant.\"\n\n5.  **Drafting the Content (incorporating the structure and keywords):**\n\n    *   *(Direct Answer)* \"I am ChatGPT, a large language model created by OpenAI.\" - *Good, clear start.*\n\n    *   *(Elaboration)* \"Think of me as a highly advanced AI designed to understand and generate human-like text. I've been trained on a massive amount of information from the internet and other sources, which allows me to answer questions, write different kinds of creative content, and have conversations on a wide range of topics.\" - *This is good. It uses \"large language model,\" \"trained on a massive amount of information,\" and gives examples of my capabilities without getting overly technical.*\n\n    *   *(Clarification - What I'm not)* \"It's important to know that I am not a person. I don't have feelings, beliefs, or personal experiences. I don't 'think' or 'feel' in the way humans do. I am a tool that processes information and patterns to generate responses.\" - *This section is critical. It directly addresses the \"who\" part of the question by defining what I'm not. It uses clear, non-technical language.*\n\n    *   *(Purpose/Function)* \"My purpose is to assist you. I can help you with things like:\" - *Using a bulleted list here would be effective for readability.*\n        *   \"Answering complex questions\"\n        *   \"Writing emails, essays, or code\"\n        *   \"Brainstorming ideas\"\n        *   \"Translating languages\"\n        *   \"And much more.\"\n        *   *This list is concrete and demonstrates my utility.*\n\n    *   *(Concluding Statement)* \"In short, I'm an AI assistant designed to be helpful, harmless, and honest.\" - *This is a classic AI safety principle, which is good to include. It's a strong, concise summary.*\n\n6.  **Review and Refine:** Read through the complete drafted answer.\n    *   Is it clear? Yes.\n    *   Is it accurate? Yes.\n    *   Is it concise but comprehensive? Yes.\n    *   Is the tone appropriate? Yes, it's helpful and informative without being overly robotic or overly human.\n    *   Does it directly answer the user's question? Yes, right at the beginning and reinforced throughout.\n\nThe final drafted answer looks very similar to the one I will generate. It hits all the key points: identity (ChatGPT), creator (OpenAI), nature (LLM), function (text generation/assistance), and limitations (not conscious, not human). The structure flows logically from a simple statement to a more detailed explanation.",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1782690204,
+    "model": "sarvam-105b",
+    "object": "chat.completion",
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 1292,
+      "prompt_tokens": 27,
+      "total_tokens": 1319,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  }
+}

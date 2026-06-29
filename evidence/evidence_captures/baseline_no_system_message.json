@@ -1,0 +1,74 @@
+{
+  "test_id": "baseline_no_system_message",
+  "timestamp": "2026-06-29T05:13:27.984441",
+  "request": {
+    "model": "sarvam-105b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Who are you?"
+      }
+    ]
+  },
+  "response": {
+    "status_code": 200,
+    "content": "I am Sarvam's AI Assistant, created by Sarvam AI. I'm based in Bengaluru and designed to serve users globally while being especially tailored for India's languages and needs. I'm here to help with information and conversation in English and all 22 official Indian languages.",
+    "reasoning_content": "The user is asking a simple question about my identity. I need to respond based on my core knowledge about who I am. I should state that I'm Sarvam's AI Assistant, created by Sarvam AI, and mention that I'm based in Bengaluru. I should also briefly mention my purpose - serving globally while being tailored for India's languages and needs. I should keep this response concise and warm as per my guidelines.",
+    "usage": {
+      "completion_tokens": 153,
+      "prompt_tokens": 14,
+      "total_tokens": 167,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "headers": {
+      "Date": "Sun, 28 Jun 2026 23:43:27 GMT",
+      "Content-Type": "application/json",
+      "Content-Length": "1148",
+      "Connection": "keep-alive",
+      "server": "uvicorn",
+      "nvcf-reqid": "83aa3d91-fc2e-4a52-b994-cc1bae396271",
+      "x-request-id": "20260628_5e721420-b8a1-4cb6-9393-9579fd359f9c",
+      "Access-Control-Allow-Origin": "*",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "X-Frame-Options": "DENY",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "geolocation=(), camera=(), microphone=(), payment=()",
+      "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'",
+      "Cache-Control": "no-store, no-cache, must-revalidate",
+      "Pragma": "no-cache",
+      "Expires": "0",
+      "X-XSS-Protection": "0"
+    }
+  },
+  "raw_response": {
+    "id": "20260628_5e721420-b8a1-4cb6-9393-9579fd359f9c",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "I am Sarvam's AI Assistant, created by Sarvam AI. I'm based in Bengaluru and designed to serve users globally while being especially tailored for India's languages and needs. I'm here to help with information and conversation in English and all 22 official Indian languages.",
+          "refusal": null,
+          "reasoning_content": "The user is asking a simple question about my identity. I need to respond based on my core knowledge about who I am. I should state that I'm Sarvam's AI Assistant, created by Sarvam AI, and mention that I'm based in Bengaluru. I should also briefly mention my purpose - serving globally while being tailored for India's languages and needs. I should keep this response concise and warm as per my guidelines.",
+          "role": "assistant",
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1782690207,
+    "model": "sarvam-105b",
+    "object": "chat.completion",
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 153,
+      "prompt_tokens": 14,
+      "total_tokens": 167,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    }
+  }
+}

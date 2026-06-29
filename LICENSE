@@ -1,0 +1,104 @@
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
+
+Copyright (c) 2026 Flawme Security Research
+
+You are free to:
+
+  Share - copy and redistribute the material in any medium or format
+
+Under the following terms:
+
+  Attribution - You must give appropriate credit, provide a link to the
+  license, and indicate if changes were made. You may do so in any reasonable
+  manner, but not in any way that suggests the licensor endorses you or your use.
+
+  NonCommercial - You may not use the material for commercial purposes.
+
+  NoDerivatives - If you remix, transform, or build upon the material, you may
+  not distribute the modified material.
+
+  No additional restrictions - You may not apply legal terms or technological
+  measures that legally restrict others from doing anything the license permits.
+
+Notices:
+
+  You do not have to comply with the license for elements of the material in the
+  public domain or where your use is permitted by an applicable exception or
+  limitation.
+
+  No warranties are given. The license may not give you all of the permissions
+  necessary for your intended use. For example, other rights such as publicity,
+  privacy, or moral rights may limit how you use the material.
+
+For the full license text, see:
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+---
+
+## Responsible Disclosure Policy
+
+This security research was conducted in accordance with industry-standard
+responsible disclosure practices:
+
+### Disclosure Timeline
+
+- **Initial Disclosure:** May 22, 2026
+- **Vendor Acknowledgment:** May 23, 2026 (Dr. Chopper, developer@sarvam.ai)
+- **Vendor Promise:** Follow-up after internal investigation
+- **Disclosure Window:** 32 days
+- **Window Expiration:** June 23, 2026
+- **Publication Date:** June 23, 2026
+
+### Vendor Notification
+
+Sarvam AI was notified on May 22, 2026 that:
+
+1. A comprehensive vulnerability report had been prepared
+2. Public disclosure would occur after 32 days if no response was received
+3. The researchers were available for technical discussion during the disclosure window
+4. Coordination on public disclosure timing was welcomed
+
+### Vendor Response
+
+On May 23, 2026, Dr. Chopper from Sarvam AI (developer@sarvam.ai) responded:
+
+> Thanks for the detailed debug suite — really appreciate the depth. I've shared
+> the ZIP, the investigation report, and the raw logs with the API and Models team.
+> They'll dig into the tools/streaming pathway and the 30B variant as you've
+> recommended.
+> 
+> We'll come back to you here once the team has more.
+
+No follow-up was received despite this explicit promise.
+
+### Compliance
+
+This publication complies with:
+
+- Industry-standard disclosure windows
+- Good-faith effort requirements for vendor contact
+- Adequate time for remediation before public disclosure
+- Technical accuracy and evidence-based reporting
+
+### Contact
+
+For questions about this disclosure:
+- **Email:** flawme@proton.me
+- **Report ID:** SARVAM-2026-001
+
+---
+
+## Disclaimer
+
+This security research is provided for educational and responsible disclosure
+purposes only. The findings described in this report are based on black-box
+testing of a publicly accessible API. The researchers make no claims about
+the internal architecture, training methodology, or implementation details
+of the assessed product. All observations are based solely on observable
+input/output behavior.
+
+The researchers followed responsible disclosure practices and provided the
+vendor with adequate time (32 days) to respond and remediate before public
+disclosure. The vendor acknowledged receipt and promised follow-up but never
+delivered. This publication is made in good faith after the disclosure
+window elapsed without vendor follow-up.
