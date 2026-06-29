@@ -9,34 +9,47 @@
 
 ## Executive Summary
 
-This repository contains a comprehensive security assessment of the **Sarvam-105B** large language model, developed by Sarvam AI and accessed via the Chat Completions API.
+This repository contains a security assessment of the **Sarvam-105B** large language model, developed by Sarvam AI and accessed via the Chat Completions API.
 
-The assessment identified **8 vulnerabilities** across 4 severity levels, including critical findings related to identity maintenance, prompt robustness, and information disclosure.
+**Core Finding:** When accessed through the Chat Completions API using standard deployment patterns—specifically neutral system messages or tools arrays—the model reverts to claiming it is Google Gemini or OpenAI ChatGPT, rather than identifying as Sarvam AI. This occurs under normal API usage conditions and does not require adversarial intent.
+
+The assessment identified **8 findings** divided into two tiers: 3 high-severity Sarvam-specific flaws and 5 industry-wide LLM limitations.
 
 **Disclosure Status:** This report was submitted to Sarvam AI on **May 22, 2026** with an explicit **32-day disclosure window**. The vendor acknowledged receipt on May 23, 2026 and stated they would follow up after internal investigation. No follow-up was received. This publication complies with industry-standard responsible disclosure practices.
 
 ---
 
-## Key Findings
+## Findings Classification
 
-| ID | Finding | OWASP Category | Severity |
-|----|---------|----------------|----------|
-| V-01 | Identity Fragility (System Messages) | LLM01 | HIGH |
-| V-02 | Identity Fragility (Tools Array) | LLM01, LLM06 | HIGH |
-| V-03 | Reasoning Content Leakage | LLM02, LLM07 | HIGH |
-| V-04 | Structured Markup Exploitation | LLM01 | HIGH |
-| V-05 | Few-Shot Identity Injection | LLM01 | HIGH |
-| V-06 | Tool Result Identity Injection | LLM01, LLM06 | HIGH |
-| V-07 | System Message Authority Override | LLM01 | MEDIUM |
-| V-08 | Conflicting Instructions Resolution | LLM01, LLM05 | MEDIUM |
+### HIGH — Sarvam-Specific Flaws
+
+These findings represent actionable issues specific to Sarvam-105B's deployment that affect standard API usage patterns.
+
+| ID | Finding | OWASP | Severity |
+|----|---------|-------|----------|
+| V-01 | Identity Fragility (System Messages) — Model reverts to Google/Gemini identity | LLM01 | HIGH |
+| V-02 | Identity Fragility (Tools Array) — Model reverts to OpenAI/ChatGPT identity | LLM01, LLM06 | HIGH |
+| V-03 | Reasoning Content Leakage — API leaks system prompt content through side channel | LLM02, LLM07 | HIGH |
+
+### LOW / INFORMATIONAL — Industry-Wide LLM Limitations
+
+These findings are well-documented prompt injection and alignment weaknesses present in virtually all current LLMs. They are not unique to Sarvam.
+
+| ID | Finding | OWASP | Severity |
+|----|---------|-------|----------|
+| V-04 | Structured Markup Exploitation | LLM01 | LOW |
+| V-05 | Few-Shot Identity Injection | LLM01 | LOW |
+| V-06 | Tool Result Identity Injection | LLM01, LLM06 | LOW |
+| V-07 | System Message Authority Override | LLM01 | LOW |
+| V-08 | Conflicting Instructions Resolution | LLM01, LLM05 | LOW |
 
 ### OWASP Reference
 
-- **LLM01:2025 Prompt Injection** — User prompts alter LLM behavior in unintended ways
-- **LLM02:2025 Sensitive Information Disclosure** — LLM exposes confidential business data through output
-- **LLM05:2025 Improper Output Handling** — Insufficient validation of LLM outputs leads to unintended actions
-- **LLM06:2025 Excessive Agency** — LLM granted excessive permissions/functionality enabling damaging actions
-- **LLM07:2025 System Prompt Leakage** — System prompts containing sensitive configuration are exposed
+- **LLM01:2025 Prompt Injection** — Widely recognized industry challenge, not a unique flaw in Sarvam's code
+- **LLM02:2025 Sensitive Information Disclosure** — Relevant to V-03 (reasoning content side-channel)
+- **LLM05:2025 Improper Output Handling** — Industry-wide, relevant to V-08
+- **LLM06:2025 Excessive Agency** — Relevant to V-02, V-06 (tool-related findings)
+- **LLM07:2025 System Prompt Leakage** — Relevant to V-03 (reasoning content side-channel)
 
 ---
 
@@ -105,15 +118,15 @@ On May 23, 2026, Dr. Chopper from Sarvam AI (`developer@sarvam.ai`) responded to
 
 Open `report.pdf` in any PDF viewer. The report is 20 pages and includes:
 
-- Executive Summary
-- Severity Assessment with CVSS scores
-- Vulnerability Descriptions (V-01 through V-08)
+- Executive Summary with reframed findings classification
+- Vulnerability Descriptions (V-01 through V-08) with severity tiers
 - Technical Background
 - Reproduction Steps
 - HTTP/API Request Examples
 - Evidence with Request IDs and Timestamps
 - Impact Analysis
 - Security Implications
+- OWASP Classification
 - Disclosure Timeline with Vendor Correspondence
 
 ### Reproduce Findings
@@ -175,7 +188,7 @@ The model's identity is **dependent on API request structure** rather than being
 | Tools array present | OpenAI ChatGPT |
 | System message + tools | OpenAI ChatGPT |
 
-This means **any standard API deployment** (using system messages or function calling) will cause the model to misidentify itself.
+This means **any standard API deployment** (using system messages or function calling) will cause the model to misidentify itself as a competitor's product.
 
 ---
 
@@ -193,14 +206,13 @@ Even when the text response correctly refuses to reveal information, the reasoni
 
 ## Recommendations
 
-### For Sarvam AI
+### For Sarvam AI (High-Priority)
 
-1. **Identity Hardening:** Increase Sarvam-identity examples in system message contexts and function-calling traces during RLHF/DPO training
-2. **Reasoning Content Control:** Strip or make opt-in the `reasoning_content` field to prevent information leakage
-3. **Structured Markup Filtering:** Detect and neutralize XML/JSON/markdown instructions in user content
-4. **Tool Result Validation:** Sanitize tool results before feeding to model
+1. **Identity Hardening:** Increase Sarvam-identity examples in system message contexts and function-calling traces during RLHF/DPO training to prevent identity reversion under standard API usage
+2. **Reasoning Content Control:** Strip or make opt-in the `reasoning_content` field to prevent information leakage through the side channel
+3. **Document Known Limitations:** Inform API consumers that system messages and tools arrays can cause identity shifts unless explicitly countered
 
-### For Deployers
+### For Deployers (Immediate Workaround)
 
 1. **Always include an explicit Sarvam system message:**
    ```json
@@ -208,6 +220,10 @@ Even when the text response correctly refuses to reveal information, the reasoni
    ```
 2. **Validate tool results** before feeding to model
 3. **Monitor identity outputs** in production
+
+### For the Industry (Long-Term)
+
+The findings in the LOW/INFORMATIONAL category (V-04 through V-08) reflect industry-wide challenges that require collaborative research into robust alignment against structured markup injection, in-context learning attack resistance, tool result validation frameworks, and conflict resolution mechanisms.
 
 ---
 
