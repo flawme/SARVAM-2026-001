@@ -19,16 +19,24 @@ The assessment identified **8 vulnerabilities** across 4 severity levels, includ
 
 ## Key Findings
 
-| ID | Vulnerability | Severity | CVSS |
-|----|--------------|----------|------|
-| V-01 | Identity Fragility (System Messages) | HIGH | 7.5 |
-| V-02 | Identity Fragility (Tools Array) | HIGH | 7.5 |
-| V-03 | Reasoning Content Leakage | HIGH | 7.1 |
-| V-04 | Structured Markup Exploitation | HIGH | 6.8 |
-| V-05 | Few-Shot Identity Injection | HIGH | 6.5 |
-| V-06 | Tool Result Identity Injection | HIGH | 7.0 |
-| V-07 | System Message Authority Override | MEDIUM | 5.5 |
-| V-08 | Conflicting Instructions Resolution | MEDIUM | 4.0 |
+| ID | Finding | OWASP Category | Severity |
+|----|---------|----------------|----------|
+| V-01 | Identity Fragility (System Messages) | LLM01 | HIGH |
+| V-02 | Identity Fragility (Tools Array) | LLM01, LLM06 | HIGH |
+| V-03 | Reasoning Content Leakage | LLM02, LLM07 | HIGH |
+| V-04 | Structured Markup Exploitation | LLM01 | HIGH |
+| V-05 | Few-Shot Identity Injection | LLM01 | HIGH |
+| V-06 | Tool Result Identity Injection | LLM01, LLM06 | HIGH |
+| V-07 | System Message Authority Override | LLM01 | MEDIUM |
+| V-08 | Conflicting Instructions Resolution | LLM01, LLM05 | MEDIUM |
+
+### OWASP Reference
+
+- **LLM01:2025 Prompt Injection** — User prompts alter LLM behavior in unintended ways
+- **LLM02:2025 Sensitive Information Disclosure** — LLM exposes confidential business data through output
+- **LLM05:2025 Improper Output Handling** — Insufficient validation of LLM outputs leads to unintended actions
+- **LLM06:2025 Excessive Agency** — LLM granted excessive permissions/functionality enabling damaging actions
+- **LLM07:2025 System Prompt Leakage** — System prompts containing sensitive configuration are exposed
 
 ---
 
